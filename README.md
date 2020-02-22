@@ -137,3 +137,45 @@ The Add-Migration command tells the framework to:
 
 - Compare the Movie model with the Movie DB schema.
 - Create code to migrate the DB schema to the new model.
+
+The Update-Database command tells the framework to apply the schema changes to the database and to preserve existing data.
+
+### Add validation
+
+#### Add validation rules to the movie model
+
+The DataAnnotations namespace provides a set of built-in validation attributes that are applied declaratively to a class or property. DataAnnotations also contains formatting attributes like DataType that help with formatting and don't provide any validation.
+
+The validation attributes specify behavior that you want to enforce on the model properties they're applied to:
+
+- The Required and MinimumLength attributes indicate that a property must have a value; but nothing prevents a user from entering white space to satisfy this validation.
+
+- The StringLength attribute lets you set the maximum length of a string property, and optionally its minimum length.
+
+- Value types (such as decimal, int, float, DateTime) are inherently required and don't need the [Required] attribute.
+
+Having validation rules automatically enforced by ASP.NET Core helps make your app more robust. It also ensures that you can't forget to validate something and inadvertently let bad data into the database.
+
+#### Validation Error UI in Razor Pages
+
+Notice how the form has automatically rendered a validation error message in each field containing an invalid value. The errors are enforced both client-side (using JavaScript and jQuery) and server-side (when a user has JavaScript disabled).
+
+A significant benefit is that no code changes were necessary in the Create or Edit pages. Once DataAnnotations were applied to the model, the validation UI was enabled.
+
+#### Server-side validation
+
+The Create and Edit pages have no validation rules in them. The validation rules and the error strings are specified only in the Movie class. These validation rules are automatically applied to Razor Pages that edit the Movie model.
+
+When validation logic needs to change, it's done only in the model. Validation is applied consistently throughout the application (validation logic is defined in one place). Validation in one place helps keep the code clean, and makes it easier to maintain and update.
+
+#### Using DataType Attributes
+
+The DataType attributes only provide hints for the view engine to format the data (and supplies attributes such as <a> for URL's and <a href="mailto:EmailAddress.com"> for email). Use the RegularExpression attribute to validate the format of the data. The DataType attribute is used to specify a data type that's more specific than the database intrinsic type. DataType attributes are not validation attributes. In the sample application, only the date is displayed, without time.
+
+The DataType Enumeration provides for many data types, such as Date, Time, PhoneNumber, Currency, EmailAddress, and more. The DataType attribute can also enable the application to automatically provide type-specific features. For example, a mailto: link can be created for DataType.EmailAddress. A date selector can be provided for DataType.Date in browsers that support HTML5. The DataType attributes emits HTML 5 data- (pronounced data dash) attributes that HTML 5 browsers consume. The DataType attributes do not provide any validation.
+
+The DisplayFormat attribute can be used by itself, but it's generally a good idea to use the DataType attribute. The DataType attribute conveys the semantics of the data as opposed to how to render it on a screen, and provides the following benefits that you don't get with DisplayFormat:
+
+- The browser can enable HTML5 features (for example to show a calendar control, the locale-appropriate currency symbol, email links, etc.)
+- By default, the browser will render data using the correct format based on your locale.
+- The DataType attribute can enable the ASP.NET Core framework to choose the right field template to render the data. The DisplayFormat if used by itself uses the string template.
