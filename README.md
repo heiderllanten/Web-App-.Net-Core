@@ -115,3 +115,25 @@ The HTML <form> tag uses the following Tag Helpers:
 
 - Form Tag Helper. When the form is submitted, the filter string is sent to the Pages/Movies/Index page via query string.
 - Input Tag Helper
+
+### Add a new field
+
+The SqlException exception is caused by the updated Movie model class being different than the schema of the Movie table of the database. (There's no Rating column in the database table.)
+
+There are a few approaches to resolving the error:
+
+* Have the Entity Framework automatically drop and re-create the database using the new model class schema. This approach is convenient early in the development cycle; it allows you to quickly evolve the model and database schema together. The downside is that you lose existing data in the database. Don't use this approach on a production database! Dropping the DB on schema changes and using an initializer to automatically seed the database with test data is often a productive way to develop an app.
+
+* Explicitly modify the schema of the existing database so that it matches the model classes. The advantage of this approach is that you keep your data. You can make this change either manually or by creating a database change script.
+
+* Use Code First Migrations to update the database schema.
+
+From the Tools menu, select NuGet Package Manager > Package Manager Console. In the PMC, enter the following commands:
+
+- Add-Migration Rating
+- Update-Database
+
+The Add-Migration command tells the framework to:
+
+- Compare the Movie model with the Movie DB schema.
+- Create code to migrate the DB schema to the new model.
