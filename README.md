@@ -98,3 +98,20 @@ When the Movies/Edit page is posted:
 - The form values on the page are bound to the Movie property. The [BindProperty] attribute enables Model binding.
 - If there are errors in the model state (for example, ReleaseDate cannot be converted to a date), the form is redisplayed with the submitted values.
 - If there are no model errors, the movie is saved.
+
+### Add search
+
+For security reasons, you must opt in to binding GET request data to page model properties. Verify user input before mapping it to properties. Opting into GET binding is useful when addressing scenarios that rely on query string or route values.
+
+To bind a property on GET requests, set the [BindProperty] attribute's SupportsGet property to true:
+
+The s => s.Title.Contains() code is a Lambda Expression. Lambdas are used in method-based LINQ queries as arguments to standard query operator methods such as the Where method or Contains (used in the preceding code). 
+
+LINQ queries are not executed when they're defined or when they're modified by calling a method (such as Where, Contains or OrderBy). Rather, query execution is deferred. That means the evaluation of an expression is delayed until its realized value is iterated over or the ToListAsync method is called. 
+
+The ASP.NET Core runtime uses model binding to set the value of the SearchString property from the query string (?searchString=Ghost) or route data (https://localhost:5001/Movies/Ghost). Model binding is not case sensitive.
+
+The HTML <form> tag uses the following Tag Helpers:
+
+- Form Tag Helper. When the form is submitted, the filter string is sent to the Pages/Movies/Index page via query string.
+- Input Tag Helper
