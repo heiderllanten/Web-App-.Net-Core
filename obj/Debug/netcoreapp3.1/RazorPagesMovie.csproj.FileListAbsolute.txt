@@ -9,7 +9,6 @@ C:\Users\Heider\source\repos\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesM
 C:\Users\Heider\source\repos\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesMovie.pdb
 C:\Users\Heider\source\repos\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesMovie.Views.dll
 C:\Users\Heider\source\repos\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesMovie.Views.pdb
-C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.csprojAssemblyReference.cache
 C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.RazorAssemblyInfo.cache
 C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.RazorAssemblyInfo.cs
 C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.AssemblyInfoInputs.cache
