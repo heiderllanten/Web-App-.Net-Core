@@ -170,7 +170,7 @@ When validation logic needs to change, it's done only in the model. Validation i
 
 #### Using DataType Attributes
 
-The 'DataType' attributes only provide hints for the view engine to format the data (and supplies attributes such as '<a>' for URL's and '<a href="mailto:EmailAddress.com">' for email). Use the 'RegularExpression' attribute to validate the format of the data. The DataType attribute is used to specify a data type that's more specific than the database intrinsic type. DataType attributes are not validation attributes. In the sample application, only the date is displayed, without time.
+The 'DataType' attributes only provide hints for the view engine to format the data (and supplies attributes such as 'a' for URL's and 'a href="mailto:EmailAddress.com"' for email). Use the 'RegularExpression' attribute to validate the format of the data. The DataType attribute is used to specify a data type that's more specific than the database intrinsic type. DataType attributes are not validation attributes. In the sample application, only the date is displayed, without time.
 
 The 'DataType' Enumeration provides for many data types, such as Date, Time, PhoneNumber, Currency, EmailAddress, and more. The DataType attribute can also enable the application to automatically provide type-specific features. For example, a 'mailto:' link can be created for 'DataType.EmailAddress'. A date selector can be provided for 'DataType.Date' in browsers that support HTML5. The DataType attributes emits HTML 5 'data-' (pronounced data dash) attributes that HTML 5 browsers consume. The 'DataType' attributes do not provide any validation.
 
