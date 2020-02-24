@@ -111,7 +111,7 @@ LINQ queries are not executed when they're defined or when they're modified by c
 
 The ASP.NET Core runtime uses model binding to set the value of the SearchString property from the query string (?searchString=Ghost) or route data (https://localhost:5001/Movies/Ghost). Model binding is not case sensitive.
 
-The HTML <form> tag uses the following Tag Helpers:
+The HTML '<form>' tag uses the following Tag Helpers:
 
 - Form Tag Helper. When the form is submitted, the filter string is sent to the Pages/Movies/Index page via query string.
 - Input Tag Helper
@@ -170,12 +170,12 @@ When validation logic needs to change, it's done only in the model. Validation i
 
 #### Using DataType Attributes
 
-The DataType attributes only provide hints for the view engine to format the data (and supplies attributes such as <a> for URL's and <a href="mailto:EmailAddress.com"> for email). Use the RegularExpression attribute to validate the format of the data. The DataType attribute is used to specify a data type that's more specific than the database intrinsic type. DataType attributes are not validation attributes. In the sample application, only the date is displayed, without time.
+The 'DataType' attributes only provide hints for the view engine to format the data (and supplies attributes such as '<a>' for URL's and '<a href="mailto:EmailAddress.com">' for email). Use the 'RegularExpression' attribute to validate the format of the data. The DataType attribute is used to specify a data type that's more specific than the database intrinsic type. DataType attributes are not validation attributes. In the sample application, only the date is displayed, without time.
 
-The DataType Enumeration provides for many data types, such as Date, Time, PhoneNumber, Currency, EmailAddress, and more. The DataType attribute can also enable the application to automatically provide type-specific features. For example, a mailto: link can be created for DataType.EmailAddress. A date selector can be provided for DataType.Date in browsers that support HTML5. The DataType attributes emits HTML 5 data- (pronounced data dash) attributes that HTML 5 browsers consume. The DataType attributes do not provide any validation.
+The 'DataType' Enumeration provides for many data types, such as Date, Time, PhoneNumber, Currency, EmailAddress, and more. The DataType attribute can also enable the application to automatically provide type-specific features. For example, a 'mailto:' link can be created for 'DataType.EmailAddress'. A date selector can be provided for 'DataType.Date' in browsers that support HTML5. The DataType attributes emits HTML 5 'data-' (pronounced data dash) attributes that HTML 5 browsers consume. The 'DataType' attributes do not provide any validation.
 
-The DisplayFormat attribute can be used by itself, but it's generally a good idea to use the DataType attribute. The DataType attribute conveys the semantics of the data as opposed to how to render it on a screen, and provides the following benefits that you don't get with DisplayFormat:
+The 'DisplayFormat' attribute can be used by itself, but it's generally a good idea to use the 'DataType' attribute. The 'DataType' attribute conveys the semantics of the data as opposed to how to render it on a screen, and provides the following benefits that you don't get with DisplayFormat:
 
 - The browser can enable HTML5 features (for example to show a calendar control, the locale-appropriate currency symbol, email links, etc.)
 - By default, the browser will render data using the correct format based on your locale.
-- The DataType attribute can enable the ASP.NET Core framework to choose the right field template to render the data. The DisplayFormat if used by itself uses the string template.
+- The 'DataType' attribute can enable the ASP.NET Core framework to choose the right field template to render the data. The 'DisplayFormat' if used by itself uses the string template.
