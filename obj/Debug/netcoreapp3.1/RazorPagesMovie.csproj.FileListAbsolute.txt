@@ -161,4 +161,3 @@ C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages
 C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages\Movies\Details.cshtml.g.cs
 C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages\Movies\Edit.cshtml.g.cs
 C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages\Movies\Index.cshtml.g.cs
-C:\Users\Heider\source\repos\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.csprojAssemblyReference.cache
